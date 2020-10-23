@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discord Ping Spammer</title>
+    <style>
+      * {
+        font-family: Arial;
+        margin: auto;
+      }
+      w {
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    Enter Discord Username (Optional#9999): <input id="username" placeholder="Bob#9999"/><br>
+    Enter Message to Spam: <input id="message" placeholder="Hello Bob"/><br>
+    Enter How Many Pings Should be Triggered: <input id="count" placeholder="100" type="number"/><i>Note: This is limited to the max length of the message</i><br>
+    Max Length (<i>Default: 2000</i>): <input id="max" type="range" min="0" max="2000" step="10" width="50%" value="2000"/><span id="maxValue">2000</span><br>
+    Message Unique Method: <select id="method">
+                             <option value="count+">Count Up</option>
+                             <option value="count-">Count Down</option>
+                             <option value="random">Randomization</option>
+                          </select><br>
+    <div id="ucount">
+      <w>_____</w>Starting Integer: <input id="countStrt" type="number" placeholder="100"/><br><br>
+    </div>
+    <div id="randomOptions" style="display:none">
+      <w>_____</w>Minimum Value: <input id="randomMin" type="number" placeholder="0"/><br>
+      <w>_____</w>Maximum Value: <input id="randomMax" type="number" placeholder="100000"/><br><br>
+    </div>
+    Number Display Format: <select id="format">
+                             <option value="0">999</option>
+                             <option value="1">#999</option>
+                             <option value="2">[999]</option>
+                             <option value="3">(999)</option>
+                             <option value="4">Custom</option>
+                          </select>
+    <div id="formatCustom" style="display:none">
+      <w>_____</w>Starting Character(s): <input id="formatStrt" placeholder="["/><br>
+      <w>_____</w>Ending Character(s): <input id="formatEnd" placeholder="]"/><br>
+    </div>
+    <br>
+    <button onclick="run()">Create</button>
+    <hr>
+    <textarea id="final" style="width:98vw;height:10vh;"></textarea>
+    <script src="script.js"></script>
+  </body>
+</html>
